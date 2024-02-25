@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
-    //private Rigidbody2D _rigidbody2D;
+    public SettingObject data;
 
     [SerializeField] private Fire prefabToInstantiate; // インスタンス化するオブジェクト
     private float forceMagnitude = 13f; // 飛ばす力の初期値
     [SerializeField] private float launchInterval = 2f; // ローンチ処理を実行する間隔
 
-
+    private void Start()
+    {
+        forceMagnitude = data.PlayerForceMagnitude;
+    }
 
     void Update()
     {

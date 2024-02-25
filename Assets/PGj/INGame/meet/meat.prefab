@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1902404019478240598}
   - component: {fileID: 8397227974267766761}
   m_Layer: 0
-  m_Name: meet
+  m_Name: meat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
 --- !u!61 &8397227974267766761
 BoxCollider2D:
   m_ObjectHideFlags: 0

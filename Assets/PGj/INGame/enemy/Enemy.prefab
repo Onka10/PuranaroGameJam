@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   itemDrop: {fileID: 1763521288253870330, guid: e3fcfade9bc259b42ab648facab98155, type: 3}
+  data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
 --- !u!114 &5927171596966221535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToInstantiate: {fileID: 6594890080247510206, guid: df0fab449aa04774daa93d6ddcdb5f66, type: 3}
+  data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
 --- !u!61 &5794801471603934705
 BoxCollider2D:
   m_ObjectHideFlags: 0

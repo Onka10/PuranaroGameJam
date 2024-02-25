@@ -7,6 +7,12 @@ public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
     public float speed = 5f; // 移動速度
     public GameObject itemDrop;  // ドロップするアイテム
     bool goRight=true;
+    public SettingObject data;
+
+    private void Start()
+    {
+        speed = data.enemySpeed;
+    }
 
 
     /// <summary>

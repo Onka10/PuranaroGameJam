@@ -12,6 +12,7 @@ namespace Player
         Rigidbody2D rBody; // リジッドボディを使うための宣言
         Vector2 velo = Vector2.zero;
         float speed = 8;
+        public SettingObject data;
 
         //上0 左1 下2 右3
         public IReadOnlyReactiveProperty<PlayerLookDirection> Direction => _dire;
@@ -20,6 +21,7 @@ namespace Player
         void Start()
         {
             rBody = this.gameObject.GetComponent<Rigidbody2D>();
+            speed = data.playerSpeed;
             
         }
 

@@ -5,10 +5,13 @@ using UnityEngine;
 public class MeetPresenter : MonoBehaviour
 {
     public float speed = 5f; // 移動速度
+    float deadTime = 5f;
+    public SettingObject data;
 
     private void Start()
     {
-        Invoke("DestroyObject", 5);
+        speed = data.meatSpeed;
+        Invoke("DestroyObject", deadTime);
     }
 
     void Update()

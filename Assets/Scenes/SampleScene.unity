@@ -367,6 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 182711647751836189, guid: 662b60511e8bf4d46a541109402a88a5, type: 3}
+  data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
 --- !u!4 &1595224457
 Transform:
   m_ObjectHideFlags: 0

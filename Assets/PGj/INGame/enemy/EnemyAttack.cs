@@ -9,13 +9,18 @@ public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Fire prefabToInstantiate; // インスタンス化するオブジェクト
     private float forceMagnitude = 5f; // 飛ばす力の初期値
+    private int attackinterval=2;
     private IDisposable _disposable;
+    public SettingObject data;
 
     private void Start()
     {
-        // UniTask.Delay を使って2秒ごとにログを出すループ処理を設定し、IDisposableを取得
-        _disposable = Observable.Interval(TimeSpan.FromSeconds(2))
+        //攻撃
+        _disposable = Observable.Interval(TimeSpan.FromSeconds(attackinterval))
             .Subscribe(_ => Fire());
+
+        forceMagnitude = data.enemyForceMagnitude;
+        attackinterval = data.attackinterval;
     }
 
     public void Dispose()

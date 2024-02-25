@@ -8,11 +8,24 @@ using UniRx;
 public class EnemySpawnPresenter : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
+    public SettingObject data;
 
     private ObjectPool<GameObject> m_objectPool; // オブジェクトプール
 
+    private int spwanInterval;
+    float spawnXmin = -9f; // 出現範囲のx座標の最小値
+    float spawnXmax = 9f; // 出現範囲のx座標の最大値
+    float spawnYmin = 0f; // 出現範囲のy座標の最小値
+    float spawnYmax = 4f; // 出現範囲のx座標の最大値
+
     void Start()
     {
+        spwanInterval = data.spawninterval;
+         spawnXmin = data.spawnXmin;
+         spawnXmax = data.spawnXmax;
+         spawnYmin = data.spawnYmin;
+         spawnYmax = data.spawnYmax;
+
         // オブジェクトプールを作成します
         m_objectPool = new ObjectPool<GameObject>
         (
@@ -77,8 +90,8 @@ public class EnemySpawnPresenter : MonoBehaviour
                 if (rnd2 == 1)
                 {
                     Vector3 leftPos = new Vector3(
-                        -9,
-                        Random.Range(0, 4f),
+                        spawnXmin,
+                        Random.Range(spawnYmin, spawnYmax),
                         0
                     );
                     enemyObject.transform.position = leftPos;
@@ -88,8 +101,8 @@ public class EnemySpawnPresenter : MonoBehaviour
                     enemyObject.GetComponent<EnemyPresenter>().GoLeft();
                     //enemyObject.transform.position = spawnPositionRigtht;
                     Vector3 rightPos = new Vector3(
-                         9,
-                         Random.Range(0, 4f),
+                         spawnXmax,
+                         Random.Range(spawnYmin, spawnYmax),
                          0
                      );
                     enemyObject.transform.position = rightPos;
@@ -107,7 +120,7 @@ public class EnemySpawnPresenter : MonoBehaviour
                 StartCoroutine(Process());
             }
 
-            await UniTask.Delay(1000);
+            await UniTask.Delay(spwanInterval);
         }
     }
 }

@@ -6,13 +6,20 @@ using UnityEngine;
 
 public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
 {
-    float manpuku=100;
+    public SettingObject data;
+
+    float MaxManpuku = 100;
+    float haraheri = 10f;
+    float manpuku=-1;
     [SerializeField] PlayerView playerView;
     private float startTime;
     public int score;
 
     void Start()
     {
+        haraheri = data.haraheri;
+        MaxManpuku = data.maxHealth;
+
         GameManager.I.Phase
             .Where(p => p == GamePhase.InGame)
             .Subscribe(_ => {
@@ -26,7 +33,7 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
     private void Update()
     {
         if (GameManager.I.Phase.Value != GamePhase.InGame) return;
-        manpuku -= Time.deltaTime * 10;
+        manpuku -= Time.deltaTime * haraheri;
         playerView.SetSlider(manpuku);
         playerView.SetScore((int) (Time.time - startTime) );
 
@@ -44,7 +51,7 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
         if (!other.TryGetComponent(out MeetPresenter meet)) return;
 
         manpuku += 10;
-        manpuku = Mathf.Clamp(manpuku, 0, 100);
+        manpuku = Mathf.Clamp(manpuku, 0, MaxManpuku);
         meet.Destroy();
     }
 
@@ -58,7 +65,7 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
 
     public void InitGame()
     {
-        manpuku = 100;
+        manpuku = MaxManpuku;
         playerView.SetSlider(manpuku);
         playerView.SetScore(0);
     }
@@ -69,6 +76,6 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
     /// <param name="damage"></param>
     public void Damage(int damage)
     {
-        manpuku -= 10;
+        manpuku -= damage;
     }
 }

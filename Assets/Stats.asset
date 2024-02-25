@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e9906a51af6f541b1d80d7eec3e525, type: 3}
+  m_Name: Stats
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  haraheri: 10
+  PlayerForceMagnitude: 13
+  playerSpeed: 5
+  enemySpeed: 5
+  enemyForceMagnitude: 5
+  attackinterval: 2
+  enemyAtk: 10
+  spawninterval: 1000
+  spawnXmin: -9
+  spawnXmax: 9
+  spawnYmin: 0
+  spawnYmax: 4
+  meatSpeed: 5

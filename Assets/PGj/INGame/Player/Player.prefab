@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e907a3c2fb13bf643a027f6e9be400a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
 --- !u!114 &6461590624501707499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225973d28b00c68448fa20091a8d5749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
   prefabToInstantiate: {fileID: 171911152687281159, guid: bc38a955226498c4aaf1581765d46529, type: 3}
   launchInterval: 2
 --- !u!114 &6640051621111790674
@@ -102,7 +104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e3f22856bc23a4a9a342e8c6513300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
   playerView: {fileID: 0}
+  score: 0
 --- !u!212 &7996307573051231233
 SpriteRenderer:
   m_ObjectHideFlags: 0

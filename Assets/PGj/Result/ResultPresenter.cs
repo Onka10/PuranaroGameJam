@@ -12,6 +12,7 @@ public class ResultPresenter : MonoBehaviour
     private bool canExecute = false;
     [SerializeField] TMP_Text textMeshPro;
     [SerializeField] PlayerCore core;
+    int waitTime = 2;
 
 
     void Start()
@@ -40,8 +41,7 @@ public class ResultPresenter : MonoBehaviour
         textMeshPro.text = core.score.ToString();
         
         canvas.enabled = true;
-        yield return new WaitForSeconds(2); // 2秒待つ
-        Debug.Log("1秒");
+        yield return new WaitForSeconds(waitTime); // 2秒待つ
         
         finish.SetActive(false);
         score.SetActive(true);
