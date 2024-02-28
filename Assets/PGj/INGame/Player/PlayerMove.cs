@@ -15,8 +15,8 @@ namespace Player
         public SettingObject data;
 
         //上0 左1 下2 右3
-        public IReadOnlyReactiveProperty<PlayerLookDirection> Direction => _dire;
-        private readonly ReactiveProperty<PlayerLookDirection> _dire = new ReactiveProperty<PlayerLookDirection>();
+        //public IReadOnlyReactiveProperty<PlayerLookDirection> Direction => _dire;
+        //private readonly ReactiveProperty<PlayerLookDirection> _dire = new ReactiveProperty<PlayerLookDirection>();
 
         void Start()
         {
@@ -29,37 +29,41 @@ namespace Player
         {
             if (GameManager.I.Phase.Value != GamePhase.InGame) return;
             rBody.velocity = velo;
-        }
-
-        private void Update()
-        {
-            var move = GetInputMove();
-
-            if (move.x != 0)
-            {
-                velo = new Vector2(move.x * speed, 0);
-                if (move.x > 0) _dire.Value = PlayerLookDirection.Right;
-                else _dire.Value = PlayerLookDirection.Left;
-            }
-            else if (move.y != 0)
-            {
-                velo = new Vector2(0, move.y * speed);
-                if (move.y > 0) _dire.Value = PlayerLookDirection.Top;
-                else _dire.Value = PlayerLookDirection.Bottom;
-            }
-            else
-            {
-                velo = Vector2.zero;
-            }
-
 
             //Clamp
             var pos = transform.position;
             // x軸方向の移動範囲制限
             pos.x = Mathf.Clamp(pos.x, -7.5f, 3.5f);
+            // y軸方向の移動範囲制限
             pos.y = Mathf.Clamp(pos.y, -3.8f, 3.8f);
-
             transform.position = pos;
+        }
+
+        private void Update()
+        {
+            var move = GetInputMove();
+            Vector2 moveVector = new Vector2(move.x, move.y);
+
+            if (moveVector != Vector2.zero)
+            {
+                // 入力方向を正規化して速度を掛ける
+                velo = moveVector.normalized * speed;
+
+                //if (Mathf.Abs(move.x) > Mathf.Abs(move.y))
+                //{
+                //    // 水平方向の移動
+                //    _dire.Value = move.x > 0 ? PlayerLookDirection.Right : PlayerLookDirection.Left;
+                //}
+                //else
+                //{
+                //    // 垂直方向の移動
+                //    _dire.Value = move.y > 0 ? PlayerLookDirection.Top : PlayerLookDirection.Bottom;
+                //}
+            }
+            else
+            {
+                velo = Vector2.zero;
+            }
         }
 
         (float x, float y) GetInputMove()

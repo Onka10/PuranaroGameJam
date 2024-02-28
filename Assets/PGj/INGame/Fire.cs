@@ -62,5 +62,4 @@ public class Fire : MonoBehaviour
     {
         _rigidbody2D.AddForce(force, mode);
     }
-
 }

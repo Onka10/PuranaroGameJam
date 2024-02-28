@@ -11,14 +11,19 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
     float MaxManpuku = 100;
     float haraheri = 10f;
     float manpuku=-1;
+    float invincibleTime = 2f; //無敵時間
     [SerializeField] PlayerView playerView;
+    [SerializeField] PlayerEffectView view;
     private float startTime;
     public int score;
+    Collider2D _collider2D;
+    bool invincible = false;
 
     void Start()
     {
         haraheri = data.haraheri;
         MaxManpuku = data.maxHealth;
+        invincibleTime = data.invincibleTime;
 
         GameManager.I.Phase
             .Where(p => p == GamePhase.InGame)
@@ -28,6 +33,8 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
                 playerView.ShowCanvas();
             })
             .AddTo(this);
+
+        _collider2D = this.gameObject.GetComponent<Collider2D>();   
     }
 
     private void Update()
@@ -76,6 +83,26 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
     /// <param name="damage"></param>
     public void Damage(int damage)
     {
+        if(invincible) return;
+
         manpuku -= damage;
+        view.StartBlinkWithAutoStop(invincibleTime);
+        //view.StartShakeWithAutoStop(invincibleTime);
+        StartCoroutine(DisableColliderForSeconds(invincibleTime));
+    }
+
+    /// <summary>
+    /// 無敵処理
+    /// </summary>
+    private IEnumerator DisableColliderForSeconds(float seconds)
+    {
+        // Colliderを無効にする
+        invincible = true;
+
+        // 指定された秒数待機
+        yield return new WaitForSeconds(seconds);
+
+        // Colliderを有効にする
+        invincible = false;
     }
 }

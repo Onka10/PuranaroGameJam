@@ -8,7 +8,7 @@ using UniRx;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] private Fire prefabToInstantiate; // インスタンス化するオブジェクト
-    private float forceMagnitude = 5f; // 飛ばす力の初期値
+    private float forceMagnitude = 3f; // 飛ばす力の初期値
     private int attackinterval=2;
     private IDisposable _disposable;
     public SettingObject data;
@@ -34,7 +34,6 @@ public class EnemyAttack : MonoBehaviour
         // IDisposableを破棄することでタスクをキャンセルする
         Dispose();
     }
-
 
     private void Fire()
     {

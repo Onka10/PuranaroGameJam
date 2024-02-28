@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: Stats
   m_EditorClassIdentifier: 
   maxHealth: 100
-  haraheri: 10
+  haraheri: 3.8
   PlayerForceMagnitude: 13
   playerSpeed: 5
   enemySpeed: 5
-  enemyForceMagnitude: 5
-  attackinterval: 2
-  enemyAtk: 10
-  spawninterval: 1000
+  enemyForceMagnitude: 7
+  attackinterval: 1
+  spawninterval: 2
   spawnXmin: -9
   spawnXmax: 9
   spawnYmin: 0

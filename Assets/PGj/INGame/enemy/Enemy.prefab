@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   itemDrop: {fileID: 1763521288253870330, guid: e3fcfade9bc259b42ab648facab98155, type: 3}
+  smoke: {fileID: 5764047303642188060, guid: 0dec0f2ec5c28ed46959ca5356f3ecf9, type: 3}
   data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
 --- !u!114 &5927171596966221535
 MonoBehaviour:

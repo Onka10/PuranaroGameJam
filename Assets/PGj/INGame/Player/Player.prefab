@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6640051621111790674}
   - component: {fileID: 7996307573051231233}
   - component: {fileID: 8910834865914362706}
+  - component: {fileID: 1088551832876102643}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -106,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
   playerView: {fileID: 0}
+  view: {fileID: 1088551832876102643}
   score: 0
 --- !u!212 &7996307573051231233
 SpriteRenderer:
@@ -148,12 +150,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ebac5a22228256d4e8a5500b7c2c39c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 019cf9b18998f884b9ad68c680fb9be7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 6, y: 5.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -191,6 +193,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12107289, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4.0306396
+  m_Radius: 2.24
+--- !u!114 &1088551832876102643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936651596599237997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e666fc38b7427d41a417cbd777a5e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7996307573051231233}

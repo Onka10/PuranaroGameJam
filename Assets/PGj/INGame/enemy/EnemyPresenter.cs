@@ -6,6 +6,7 @@ public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
 {
     public float speed = 5f; // 移動速度
     public GameObject itemDrop;  // ドロップするアイテム
+    public GameObject smoke;  // 煙
     bool goRight=true;
     public SettingObject data;
 
@@ -23,6 +24,7 @@ public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
     {
         // アイテムをドロップ
         Instantiate(itemDrop, transform.position, Quaternion.identity);
+        Instantiate(smoke, transform.position, Quaternion.identity);
 
         // 敵を破壊
         Destroy(gameObject);

@@ -11,6 +11,7 @@ public class SettingObject : ScriptableObject
     public float PlayerForceMagnitude = 13f; // 火を飛ばす力
     //playermove
     public float playerSpeed = 5f;//プレイヤーの移動速度
+    public float invincibleTime = 2f; //無敵時間
 
     //敵
     //enemypresenter
