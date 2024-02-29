@@ -41,6 +41,8 @@ namespace Player
 
         private void Update()
         {
+            if (GameManager.I.Phase.Value != GamePhase.InGame) return;
+
             var move = GetInputMove();
             Vector2 moveVector = new Vector2(move.x, move.y);
 
@@ -48,17 +50,6 @@ namespace Player
             {
                 // 入力方向を正規化して速度を掛ける
                 velo = moveVector.normalized * speed;
-
-                //if (Mathf.Abs(move.x) > Mathf.Abs(move.y))
-                //{
-                //    // 水平方向の移動
-                //    _dire.Value = move.x > 0 ? PlayerLookDirection.Right : PlayerLookDirection.Left;
-                //}
-                //else
-                //{
-                //    // 垂直方向の移動
-                //    _dire.Value = move.y > 0 ? PlayerLookDirection.Top : PlayerLookDirection.Bottom;
-                //}
             }
             else
             {

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df35278897b5cce40b4e116d65050b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meat: {fileID: 1763521288253870330, guid: e3fcfade9bc259b42ab648facab98155, type: 3}
   smokeAnimation: {fileID: 6695897546847174700}
 --- !u!114 &6695897546847174700
 MonoBehaviour:

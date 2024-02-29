@@ -5,7 +5,7 @@ using UnityEngine;
 public class Smoke : MonoBehaviour
 {
     float deadTime = 1f;
-    //public SettingObject data;
+    public GameObject meat;  // 肉
     [SerializeField] SmokeAnimation smokeAnimation;
 
     private void Start()
@@ -16,6 +16,7 @@ public class Smoke : MonoBehaviour
 
     private void DestroyObject()
     {
+        Instantiate(meat, transform.position, Quaternion.identity);
         // オブジェクトを破棄する
         Destroy(this.gameObject);
     }

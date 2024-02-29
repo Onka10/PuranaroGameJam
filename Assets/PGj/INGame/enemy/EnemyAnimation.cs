@@ -7,12 +7,11 @@ public class EnemyAnimation : MonoBehaviour
     public Sprite[] frames; // アニメーションに使用する画像の配列
     public float framesPerSecond = 10f; // アニメーションのフレームレート
 
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private int currentFrameIndex;
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         currentFrameIndex = 0;
         StartCoroutine(Animate());
     }
@@ -31,5 +30,10 @@ public class EnemyAnimation : MonoBehaviour
             // 次のフレームまで待機
             yield return new WaitForSeconds(1f / framesPerSecond);
         }
+    }
+
+    public void Flip()
+    {
+        spriteRenderer.flipX = true;
     }
 }

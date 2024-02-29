@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeetPresenter : MonoBehaviour
 {
     public float speed = 5f; // 移動速度
-    float deadTime = 5f;
+    float deadTime = 7f;
     public SettingObject data;
 
     private void Start()
@@ -18,13 +18,6 @@ public class MeetPresenter : MonoBehaviour
     {
         // 毎フレーム右方向に移動する
         transform.Translate(Vector3.down * speed * Time.deltaTime);
-    }
-
-    private void DestroyObject()
-    {
-        // オブジェクトを破棄する
-        Destroy(gameObject);
-        //DestroyImmediate(gameObject, true);
     }
 
     public void Destroy()

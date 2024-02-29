@@ -68,8 +68,6 @@ public class EnemySpawnPresenter : MonoBehaviour
                              0
                          );
                     }
-
-                    // 10 秒後に敵を停止させる
                     await UniTask.Delay(TimeSpan.FromSeconds(3));
                     Destroy(enemyObject);
                 //}

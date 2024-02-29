@@ -5,14 +5,15 @@ using UnityEngine;
 public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
 {
     public float speed = 5f; // 移動速度
-    public GameObject itemDrop;  // ドロップするアイテム
     public GameObject smoke;  // 煙
     bool goRight=true;
     public SettingObject data;
+    [SerializeField] EnemyAnimation animation;
 
     private void Start()
     {
         speed = data.enemySpeed;
+        
     }
 
 
@@ -23,9 +24,7 @@ public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
     public void Damage(int damage)
     {
         // アイテムをドロップ
-        Instantiate(itemDrop, transform.position, Quaternion.identity);
         Instantiate(smoke, transform.position, Quaternion.identity);
-
         // 敵を破壊
         Destroy(gameObject);
     }
@@ -33,6 +32,7 @@ public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
     public void GoLeft()
     {
         goRight = false;
+        animation.Flip();
     }
 
     void Update()
