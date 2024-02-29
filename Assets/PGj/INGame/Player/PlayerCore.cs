@@ -34,6 +34,14 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
             })
             .AddTo(this);
 
+
+        GameManager.I.Phase
+            .Where(p => p == GamePhase.Result)
+            .Subscribe(_ => {
+                transform.position = new Vector3(-1f,- 3f, 0);
+            })
+            .AddTo(this);
+
         _collider2D = this.gameObject.GetComponent<Collider2D>();   
     }
 
@@ -86,8 +94,8 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
         if(invincible) return;
 
         manpuku -= damage;
+        PlayerSE.I.Damage();
         view.StartBlinkWithAutoStop(invincibleTime);
-        //view.StartShakeWithAutoStop(invincibleTime);
         StartCoroutine(DisableColliderForSeconds(invincibleTime));
     }
 

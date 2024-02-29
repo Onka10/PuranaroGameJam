@@ -21,6 +21,7 @@ public class PlayerFire : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (GameManager.I.Phase.Value != GamePhase.InGame) return;
+            PlayerSE.I.Fire();
             Fire();
         }
     }

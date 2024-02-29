@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Smoke : MonoBehaviour
 {
-    float deadTime = 0.3f;
-    public SettingObject data;
+    float deadTime = 1f;
+    //public SettingObject data;
+    [SerializeField] SmokeAnimation smokeAnimation;
 
     private void Start()
     {
+        smokeAnimation.StartAnime();
         Invoke("DestroyObject", deadTime);
     }
 

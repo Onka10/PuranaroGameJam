@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1047916286716554805}
   - component: {fileID: 3982317414427298699}
   - component: {fileID: 3814737314828030759}
+  - component: {fileID: 6695897546847174700}
   m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+  m_Sprite: {fileID: 1709290048, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,4 +98,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df35278897b5cce40b4e116d65050b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  smokeAnimation: {fileID: 6695897546847174700}
+--- !u!114 &6695897546847174700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5764047303642188060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1dc6e1256c650e4f84293a26a3ecfda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 1709290048, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  - {fileID: -1598483888, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  - {fileID: -1501497393, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  - {fileID: -1660257277, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  - {fileID: -1621347631, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  - {fileID: 1231186425, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  - {fileID: 828945502, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  - {fileID: -1053243336, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  - {fileID: 917772366, guid: ce8b91e258baa4c44b8b9457c2be2496, type: 3}
+  framesPerSecond: 10
+  spriteRenderer: {fileID: 3982317414427298699}
