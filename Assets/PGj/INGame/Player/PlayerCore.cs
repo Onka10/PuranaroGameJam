@@ -65,6 +65,7 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
         // 肉をとったのであれば
         if (!other.TryGetComponent(out MeetPresenter meet)) return;
 
+        PlayerSE.I.Eat();
         manpuku += 10;
         manpuku = Mathf.Clamp(manpuku, 0, MaxManpuku);
         meet.Destroy();

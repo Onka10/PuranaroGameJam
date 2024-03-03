@@ -20,6 +20,7 @@ public class ResultPresenter : MonoBehaviour
         GameManager.I.Phase
             .Where(p => p == GamePhase.Result)
             .Subscribe(_ => {
+                SystemSE.I.End();
                 canvas.enabled = true;
                 StartCoroutine(StartCountdown());
             })

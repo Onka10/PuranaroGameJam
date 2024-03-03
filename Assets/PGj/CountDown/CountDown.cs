@@ -17,6 +17,7 @@ public class CountDown : MonoBehaviour
             .Where(p => p==GamePhase.Load)
             .Subscribe(_ => {
                 canvas.enabled = true;
+                BGMManager.I.Stopped();
                 //初期化
                 core.InitGame();
 
@@ -30,6 +31,7 @@ public class CountDown : MonoBehaviour
         // カウントダウンが0になるまで繰り返す
         while (countdownTime > 0)
         {
+            SystemSE.I.Count();
             view.SetTime(countdownTime.ToString());
             yield return new WaitForSeconds(1); // 1秒待つ
             countdownTime--; // カウントダウンの値を減らす
@@ -37,8 +39,10 @@ public class CountDown : MonoBehaviour
 
         // カウントダウン終了時の処理
         //Debug.Log("カウントダウン終了");
+        SystemSE.I.Go();
         GameManager.I.NextPhase();
         canvas.enabled = false;
         countdownTime = 3;
+        BGMManager.I.InGame();
     }
 }

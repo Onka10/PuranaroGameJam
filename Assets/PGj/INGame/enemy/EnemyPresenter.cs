@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
 {
     public float speed = 5f; // 移動速度
     public GameObject smoke;  // 煙
+    public GameObject meat;  // 肉
     bool goRight=true;
     public SettingObject data;
     [SerializeField] EnemyAnimation animation;
@@ -29,6 +31,8 @@ public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
     public void Damage(int damage)
     {
         // アイテムをドロップ
+       EnemySE.I.Damage();
+        Instantiate(meat, transform.position, Quaternion.identity);
         Instantiate(smoke, transform.position, Quaternion.identity);
         // 敵を破壊
         Destroy(gameObject);

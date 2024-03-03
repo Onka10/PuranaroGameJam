@@ -24,4 +24,10 @@ public class PlayerSE : Singleton<PlayerSE>
         _audioSource.volume = 1f;
         _audioSource.PlayOneShot(SE[1]);
     }
+
+    public void Eat()
+    {
+        _audioSource.volume = 1f;
+        _audioSource.PlayOneShot(SE[2]);
+    }
 }

@@ -28,6 +28,10 @@ public class SettingObject : ScriptableObject
     public float spawnYmin = 0f; // 出現範囲のy座標の最小値
     public float spawnYmax = 4f; // 出現範囲のx座標の最大値
 
+    //煙
+    //smoke
+    public float smokeDeadTime = 1f;//スモークが消える時間
+
     //肉
     //meatPresenter
     public float meatSpeed = 5f; // 肉の移動速度
