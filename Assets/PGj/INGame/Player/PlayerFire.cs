@@ -9,6 +9,7 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] private Fire prefabToInstantiate; // インスタンス化するオブジェクト
     private float forceMagnitude = 13f; // 飛ばす力の初期値
     [SerializeField] private float launchInterval = 2f; // ローンチ処理を実行する間隔
+    [SerializeField] PlayerAnimation anime;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class PlayerFire : MonoBehaviour
         {
             if (GameManager.I.Phase.Value != GamePhase.InGame) return;
             PlayerSE.I.Fire();
+            anime.PlayFireAnimation();  
             Fire();
         }
     }

@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 6461590624501707499}
   - component: {fileID: 6640051621111790674}
   - component: {fileID: 7996307573051231233}
+  - component: {fileID: 6602815173324504389}
   - component: {fileID: 8910834865914362706}
   - component: {fileID: 1088551832876102643}
   m_Layer: 0
@@ -239,6 +240,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
   prefabToInstantiate: {fileID: 171911152687281159, guid: bc38a955226498c4aaf1581765d46529, type: 3}
   launchInterval: 2
+  anime: {fileID: 6602815173324504389}
 --- !u!114 &6640051621111790674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +256,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 82da054befd2e184b85484da5d9020d5, type: 2}
   playerView: {fileID: 0}
   view: {fileID: 1088551832876102643}
+  anime: {fileID: 6602815173324504389}
   score: 0
 --- !u!212 &7996307573051231233
 SpriteRenderer:
@@ -307,6 +310,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6602815173324504389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936651596599237997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5d0315c4560954f9e07f7725d579a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7996307573051231233}
+  framesPerSecond: 10
+  fire:
+  - {fileID: 21300000, guid: c530a65bb2d01ec42bc3f5e71d036313, type: 3}
+  - {fileID: 21300000, guid: 6fdee738eb39ba644946ea646fec68b4, type: 3}
+  - {fileID: 21300000, guid: 564ed7a9148ec814887cfa76ef8c7b51, type: 3}
+  - {fileID: 21300000, guid: cf59377fe6b3fd742aafe6da7cbbb684, type: 3}
+  - {fileID: 21300000, guid: 39d10516416e4a340ac6f3c0b15345b3, type: 3}
+  eat:
+  - {fileID: 21300000, guid: 102269bb8daae664fbe39ee9d85f2502, type: 3}
+  - {fileID: 21300000, guid: 822de77fcaf8f7c48be88a1562e7c995, type: 3}
+  - {fileID: 21300000, guid: 28b570f6b11b60842b5892932cdd7f24, type: 3}
+  - {fileID: 21300000, guid: 48a93baab073d7642a2181e5ac1be5f2, type: 3}
+  - {fileID: 21300000, guid: 3eecf65b62826f54b8c3e29bf53822be, type: 3}
+  - {fileID: 21300000, guid: 4bee5cf8e599741409f8b038d88648d7, type: 3}
+  - {fileID: 21300000, guid: 2942d1758db5a7a4ea3356ec2a09d4af, type: 3}
+  - {fileID: 21300000, guid: 9c3d9ea4052238648b3fb40e33e67a9d, type: 3}
+  damage:
+  - {fileID: 21300000, guid: 0c4d814768d9d7f4ab47cadfe54121b2, type: 3}
+  normal:
+  - {fileID: 21300000, guid: 019cf9b18998f884b9ad68c680fb9be7, type: 3}
 --- !u!58 &8910834865914362706
 CircleCollider2D:
   m_ObjectHideFlags: 0

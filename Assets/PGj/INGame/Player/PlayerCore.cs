@@ -14,6 +14,7 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
     float invincibleTime = 2f; //無敵時間
     [SerializeField] PlayerView playerView;
     [SerializeField] PlayerEffectView view;
+    [SerializeField] PlayerAnimation anime;
     private float startTime;
     public int score;
     Collider2D _collider2D;
@@ -66,6 +67,7 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
         if (!other.TryGetComponent(out MeetPresenter meet)) return;
 
         PlayerSE.I.Eat();
+        anime.PlayEatAnimation();
         manpuku += 10;
         manpuku = Mathf.Clamp(manpuku, 0, MaxManpuku);
         meet.Destroy();
@@ -96,6 +98,7 @@ public class PlayerCore : Singleton<PlayerCore>,IDamage2Player
 
         manpuku -= damage;
         PlayerSE.I.Damage();
+        anime.PlayDamageAnimation();
         view.StartBlinkWithAutoStop(invincibleTime);
         StartCoroutine(DisableColliderForSeconds(invincibleTime));
     }
