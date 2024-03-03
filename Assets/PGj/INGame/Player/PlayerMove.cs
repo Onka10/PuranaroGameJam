@@ -22,12 +22,18 @@ namespace Player
         {
             rBody = this.gameObject.GetComponent<Rigidbody2D>();
             speed = data.playerSpeed;
-            
-        }
+
+            GameManager.I.Phase
+                .Where(phase => phase != GamePhase.InGame)
+                .Subscribe(_ => {
+                    velo = new Vector2(0, 0);
+                })
+            .AddTo(this);
+
+    }
 
         void FixedUpdate()
         {
-            if (GameManager.I.Phase.Value != GamePhase.InGame) return;
             rBody.velocity = velo;
 
             //Clamp

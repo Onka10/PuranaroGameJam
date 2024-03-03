@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Stats
   m_EditorClassIdentifier: 
   maxHealth: 100
-  haraheri: 3.8
+  haraheri: 15.18
   PlayerForceMagnitude: 13
   playerSpeed: 5
+  invincibleTime: 2
   enemySpeed: 5
   enemyForceMagnitude: 7
   attackinterval: 1

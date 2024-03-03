@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
 {
@@ -13,7 +14,11 @@ public class EnemyPresenter : MonoBehaviour, IDamage2Enemy
     private void Start()
     {
         speed = data.enemySpeed;
-        
+
+        GameManager.I.Phase
+            .Where(p => p!=GamePhase.InGame)
+            .Subscribe(phase => Destroy(this.gameObject))
+            .AddTo(this);
     }
 
 
